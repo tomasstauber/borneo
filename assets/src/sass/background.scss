@@ -1,4 +1,14 @@
 .backgruondUno img{
     width: 100%;
     height: 800px;
+    position: relative;
+}
+
+.backgruondDos{
+    display: flex;
+    justify-content: center;
+} 
+    img{
+    width: 80%;
+    height: 500px;
 }

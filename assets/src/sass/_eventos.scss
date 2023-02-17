@@ -11,6 +11,7 @@
     align-items: center;
     text-align: center;
     border-radius: 5px;
+    border: 2px solid white;
     background-color: black;
     color: white;
     width: 400px;
@@ -25,10 +26,10 @@
             }
                 button{
                     border: none;
-                    width: 250px;
-                    height: 25px;
+                    width: 300px;
+                    height: 30px;
                     font-size: 15px;
-                    background-color: antiquewhite;
+                    background-color: white;
                     font-family: $letraBody;
                 }
 }
