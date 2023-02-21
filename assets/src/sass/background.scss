@@ -7,8 +7,12 @@
 .backgruondDos{
     display: flex;
     justify-content: center;
+    width: 100%;
+    height: 600px;
 } 
-    img{
-    width: 80%;
-    height: 500px;
+
+.backgroundPedidos img{
+    width: 100%;
+    height: 600px;
+    position: relative;
 }

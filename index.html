@@ -17,13 +17,12 @@
             <ul class="navbarOpcines">
                 <li><a href="#">Nosotros</a></li>
                 <li><a href="#">Reservas</a></li>
-                <li><a href="#">Pedidos</a></li>
+                <li><a href="./pages/pedidos.html">Pedidos</a></li>
                 <li><a href="#">Ubicación</a></li>
             </ul>
         </div>
     </nav>
     <header>
-
         <div class="flotante">
             <i class="bi bi-flower2"></i>
             <p class="flotanteInfo">Rompiendo esquemas, <br> siempre resaltando la esencia de nuestros invitados, <br> brindándoles el mejor servicio.</p>
@@ -70,18 +69,28 @@
         <div class="reservas">
             <div class="selector">
                 <h3>Reserva ahora tu mesa</h3>
-                <fieldset>
-                    <select name="fecha" class="reservaFecha" id="fecha">
-                        <option value="fecha">Fecha</option>
-                    </select>
-                    <select name="horario" class="reservaHorario" id="horario">
-                        <option value="horario">Horario</option>
-                    </select>
-                    <select name="grupo" class="reservaGrupo" id="grupo">
-                        <option value="grupo">Tamaño del grupo</option>
-                    </select>
-                    <button class="btn">Reservar</button>
-                </fieldset>
+                <form>
+                    <li>
+                        <label for="fecha">Fecha de la reserva</label>
+                        <input id="fecha" type="date" placeholder="Seleccione la fecha">
+                    </li>
+                    <li>
+                        <label for="hora">Hora de la reserva</label>
+                        <input name="hora" type="time" placeholder="Seleccione un horario">
+                    </li>
+                    <li>
+                        <label for="cantidad">Para cuántas personas?</label>
+                        <input name="cantidad" type="number" placeholder="Cantidad de personas">
+                    </li>
+                    <li>
+                        <label for="nombre">Nombre para la reserva</label>
+                        <input name="nombre" type="text" placeholder="Ingrese su nombre ">
+                    </li>
+                    <div class="btnForm">
+                        <button type="submit">Reservar</button>
+                        <button type="reset">Cancelar</button>
+                    </div>
+                </form>
             </div>
             <div class="pedidos">
                 <h4>Tenes otro plan? Hacé tu pedido y disfrutalo donde estés</h4>
@@ -98,7 +107,7 @@
             <ul>
                 <li class="navbarOpcines"><a href="#">Nosotros</a></li>
                 <li class="navbarOpcines"><a href="#">Reservas</a></li>
-                <li class="navbarOpcines"><a href="#">Pedidos</a></li>
+                <li class="navbarOpcines"><a href="./pages/pedidos.html">Pedidos</a></li>
                 <li class="navbarOpcines"><a href="#">Ubicación</a></li>
             </ul> 
         </div>
