@@ -26,8 +26,6 @@ let carrito = [];
 
 const wrapper = document.getElementById("wrapper");
 
-const wrapperCarrito = document.getElementById("wrapperCarrito");
-
 /** Modificación del DOM **/
 const menuDinamico = () =>{
     menu.forEach(producto => {
@@ -64,7 +62,14 @@ menuDinamico();
     console.log(carrito); 
 };
 
-/** Mostrar el carrito **/
+/** Carrito Dinámico **/
+
+const wrapperCarrito = document.getElementById("wrapperCarrito");
+const verCarrito = document.getElementById("btnCarrito");
+
+verCarrito.addEventListener("click", () =>{
+    carritoDinamico();
+})
 
 const carritoDinamico = ()=> {
     wrapperCarrito.innerHTML = "";
@@ -72,13 +77,36 @@ const carritoDinamico = ()=> {
         const itemCarrito = document.createElement("div");
         itemCarrito.className = ("itemCarrito");
         itemCarrito.innerHTML = `
-                                <h3>${producto.nombre}</h3>
-                                <p>${producto.precio}</p>
-                                <p>${producto.cantidad}</p>
-                                <p></p>
+                                <div>
+                                    <h3>${producto.nombre}</h3>
+                                    <p>Precio: $${producto.precio}</p>
+                                    <p>Cantidad: ${producto.cantidad}</p>
+                                    <button class = "" id="eliminar${producto.id}" > Eliminar </button>
+                                </div>
         `
-        wrapperCarrito.appendChild(itemCarrito);
+    wrapperCarrito.appendChild(itemCarrito);
+
+    const boton = document.getElementById(`eliminar${producto.id}`);
+        boton.addEventListener("click", () => {
+            eliminarItem(producto.id);
+        })
     })
 };
 
-carritoDinamico();
+const eliminarItem = (id) => {
+    const producto = carrito.find(producto => producto.id === id);
+    const indice = carrito.indexOf(producto);
+    carrito.splice(indice, 1);
+    carritoDinamico(); 
+}
+
+const limpiarCarrito = document.getElementById("limpiarCarrito");
+
+limpiarCarrito.addEventListener("click", ()=>{
+    vaciarCarrito();
+})
+
+const vaciarCarrito = () => {
+    carrito = [];
+    carritoDinamico();
+}

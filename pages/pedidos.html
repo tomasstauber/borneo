@@ -16,7 +16,7 @@
         <div>        
             <ul class="navbarOpcines">
                 <li><a href="../index.html">Inicio</a></li>
-                <li><i class="bi bi-cart"></i></li>
+                <button><i class="bi bi-cart btnCarrito" id="btnCarrito"> Ver Carrito</i></button>
             </ul>
         </div>
     </nav>
@@ -31,26 +31,12 @@
     </header>
     <main>
         <div id="wrapper"></div>
-        <div id="wrapperCarrito">
-<!--             <h3>Usted está llevando:</h3>
-            <div class="itemCarrito">
-                <h4>Papas fritas</h4>
-                <p>Precio: $500</p>
-                <p>Cantidad: 1</p>
-            </div>
-            <div class="itemCarrito">
-                <h4>Papas fritas</h4>
-                <p>Precio: $500</p>
-                <p>Cantidad: 1</p>
-            </div>
-            <div class="itemCarrito">
-                <h4>Papas fritas</h4>
-                <p>Precio: $500</p>
-                <p>Cantidad: 1</p>
-            </div>
-            <p>Total de la compra: $4850</p>
+        <div class="wrapperCarritoDefault">
+            <h3 class="texto">Usted está llevando:</h3>
+            <div id="wrapperCarrito" class="texto"></div>
+            <h4>El total de la compra es de: $<span id="totalCompra"></span></h4>
+            <button id="limpiarCarrito">Vaciar carrito</button>
             <button id="finalizarCompra">Finalizar compra</button>
-            <button id="limparCarrito">Vaciar carrito</button> -->
         </div>
     </main>
     <footer>
