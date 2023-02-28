@@ -102,7 +102,11 @@ const carritoDinamico = ()=> {
 const eliminarItem = (id) => {
     const producto = carrito.find(producto => producto.id === id);
     const indice = carrito.indexOf(producto);
-    carrito.splice(indice, 1);
+    if(producto.cantidad === 1){
+        carrito.splice(indice, 1);
+    } else {
+        producto.cantidad--
+    }
     carritoDinamico(); 
     localStorage.setItem("carrito", JSON.stringify(carrito));
 }
