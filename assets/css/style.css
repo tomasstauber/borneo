@@ -56,8 +56,7 @@ nav {
 
 .backgroundPedidos img {
   width: 100%;
-  height: 600px;
-  position: relative; }
+  height: 600px; }
 
 .flotante {
   display: flex;
@@ -216,9 +215,11 @@ footer {
   font-size: 20px;
   padding: 10px; }
 
-.tituloPedidos h1, h2 {
+.tituloPedidos {
   display: flex;
-  justify-content: flex-start; }
+  justify-content: center; }
+  .tituloPedidos h1, .tituloPedidos h2 {
+    display: none; }
 
 #wrapper {
   display: flex;
@@ -247,17 +248,17 @@ footer {
     width: 280px;
     height: 30px;
     background-color: white;
-    color: black; }
+    color: black;
+    cursor: pointer; }
 
 .wrapperCarritoDefault {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   border: 2px solid white;
   width: max-content;
   height: max-content;
-  margin-top: 100px;
-  margin-bottom: 50px;
+  margin: 100px 0px 50px 50px;
   font-family: quicksand, sans serif; }
   .wrapperCarritoDefault h3 {
     font-family: rowdies, sans serif;
@@ -267,10 +268,15 @@ footer {
     width: 350px;
     height: 30px;
     font-size: 15px;
-    margin: 10px; }
+    margin: 10px;
+    cursor: pointer; }
+  .wrapperCarritoDefault h4 {
+    font-family: quicksand, sans serif;
+    margin: 10px 0px 0px 10px; }
 
 #limpiarCarrito {
-  background-color: #f70606; }
+  background-color: #f70606;
+  cursor: pointer; }
 
 .itemCarrito {
   display: flex;
@@ -280,4 +286,12 @@ footer {
 
 .btnCarrito {
   font-size: 25px;
-  margin: 10px; }
+  margin: 10px;
+  cursor: pointer; }
+
+.anuncio {
+  width: 500px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  border: 2px solid white;
+  color: white; }

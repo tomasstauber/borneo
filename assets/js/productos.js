@@ -24,6 +24,10 @@ const menu = [papasFS, papasCD, hamburguesaBC, hamburguesaPM, tablaCH, tablaGR, 
 
 let carrito = [];
 
+if(localStorage.getItem("carrito")){
+    carrito = JSON.parse(localStorage.getItem("carrito"));
+}
+
 const wrapper = document.getElementById("wrapper");
 
 /** Modificación del DOM **/
@@ -60,6 +64,7 @@ menuDinamico();
         carrito.push(producto)
     }
     console.log(carrito); 
+    localStorage.setItem("carrito", JSON.stringify(carrito));
 };
 
 /** Carrito Dinámico **/
@@ -91,6 +96,7 @@ const carritoDinamico = ()=> {
             eliminarItem(producto.id);
         })
     })
+    sumaCarrito();
 };
 
 const eliminarItem = (id) => {
@@ -98,6 +104,7 @@ const eliminarItem = (id) => {
     const indice = carrito.indexOf(producto);
     carrito.splice(indice, 1);
     carritoDinamico(); 
+    localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
 const limpiarCarrito = document.getElementById("limpiarCarrito");
@@ -109,4 +116,29 @@ limpiarCarrito.addEventListener("click", ()=>{
 const vaciarCarrito = () => {
     carrito = [];
     carritoDinamico();
+    localStorage.clear();
 }
+
+const totalCompra = document.getElementById("totalCompra");
+
+const sumaCarrito = () => {
+    let precioFinal = 0;
+    carrito.forEach(producto => {
+        precioFinal += producto.precio * producto.cantidad;
+    })
+    totalCompra.innerHTML = `${precioFinal}`;
+}
+
+const finalizarCompra = document.getElementById("finalizarCompra");
+
+finalizarCompra.addEventListener("click", () =>{
+    vaciarCarrito();   
+    const cierre = document.createElement("div");
+    cierre.className = ("anuncio");
+    cierre.innerHTML =  `
+                         <h3>Su pedido se registró exitosamente!</h3>
+                         <p>El restaurante está preparando tu pedido</p>
+                         <p>En unos minutos podrás ver su estado en tiempo real.</p>   
+                        `
+    finalizarCompra.appendChild(cierre);
+})
