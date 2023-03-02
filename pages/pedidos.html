@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Borneo | Pedidos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
@@ -36,22 +38,24 @@
             <div id="wrapperCarrito" class="texto"></div>
             <h4>El total de la compra es de: $<span id="totalCompra"></span></h4>
             <button id="limpiarCarrito">Vaciar carrito</button>
-            <button id="finalizarCompra">Finalizar compra</button>
+            <button id="finalizarCompra">Finalizar pedido</button>
         </div>
     </main>
     <footer>
         <div class="footerNav">
             <ul>
-                <li class="navbarOpcines"><a href="#">Nosotros</a></li>
-                <li class="navbarOpcines"><a href="#">Reservas</a></li>
+                <li class="navbarOpciones"><a href="../index.html">Inicio</a></li>
+                <li class="navbarOpcines"><a href="../index.html#nosotros">Nosotros</a></li>
+                <li class="navbarOpcines"><a href="../index.html#reservas">Reservas</a></li>
                 <li class="navbarOpcines"><a href="#">Pedidos</a></li>
-                <li class="navbarOpcines"><a href="#">Ubicación</a></li>
+                <li class="navbarOpcines"><a href="../index.html#ubicacion">Ubicación</a></li>
             </ul> 
         </div>
         <div class="footerNews">
             <h3>Suscríbete a nuestro newslwtter para ser el primero <br> en enterarte de las promociones</h3>
             <label for="mail">Ingrese su email</label>
             <input type="email">
+            <button type="submit">Suscribirse</button>
         </div>
         <div class="footerHorarios">
             <p>HORARIOS</p>
@@ -64,6 +68,8 @@
             <i class="bi bi-telegram"></i>
         </div>
     </footer>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
     <script src="../assets/js/productos.js"></script>
 </body>
 </html>

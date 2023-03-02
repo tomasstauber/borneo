@@ -5,11 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Borneo | Night Club</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
     <!-- IMPORTANTE  -->
-    <!-- La consigna solicitada para la tercer PreEntega esta realizada en la seccion: productos.html, el sistema de reservas del index aun no está terminado -->
+    <!-- La consigna solicitada para la tercer PreEntega esta realizada en el archivo: productos.js, el sistema de reservas del index aun no está terminado -->
     <nav>
         <div class="tituloIndex">
                 <h1>B<i class="bi bi-flower2"></i>RNEO</h1>
@@ -17,10 +20,10 @@
         </div>
         <div>        
             <ul class="navbarOpcines">
-                <li><a href="#">Nosotros</a></li>
-                <li><a href="#">Reservas</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#reservas">Reservas</a></li>
                 <li><a href="./pages/pedidos.html">Pedidos</a></li>
-                <li><a href="#">Ubicación</a></li>
+                <li><a href="#ubicacion">Ubicación</a></li>
             </ul>
         </div>
     </nav>
@@ -28,47 +31,59 @@
         <div class="flotante">
             <i class="bi bi-flower2"></i>
             <p class="flotanteInfo">Rompiendo esquemas, <br> siempre resaltando la esencia <br> de nuestros invitados, <br> brindándoles el mejor servicio.</p>
-            <button class="flotanteBtn">CONOCE NUESTRAS PROPUESTAS</button>
+            <button class="flotanteBtn"><a href="#propuestas">CONOCE NUESTRAS PROPUESTAS</a></button>
         </div>
     </header>
     <main>
         <div class="backgruondUno">
-            <img src="./assets/img/backgroundUno.jpg" alt="">
+            <img src="./assets/img/backgroundUno.jpg" alt="bartender sirivendo un trago">
         </div>
-        <div class="eventos">
-            <div class="evento">
+        <div class="eventos" id="propuestas">
+            <div class="evento" data-aos="fade-down">
                 <h3>Happy Hour</h3>
                 <p>hasta 50% off en tragos y picadas para grandes grupos</p>
                 <p>Sábado y domingo de 21 a 00 hs.</p>
-                <img src="./assets/img/eventoUno.jpg" alt="">
-                <button >RESERVÁ AHORA</button>
+                <img src="./assets/img/eventoUno.jpg" alt="vasos de cerveza">
+                <button><a href="#reservas">RESERVÁ AHORA</a></button>
             </div>
-            <div class="evento">
+            <div class="evento" data-aos="fade-up">
                 <h3>Happy Hour</h3>
                 <p>hasta 50% off en tragos y picadas para grandes grupos</p>
                 <p>Sábado y domingo de 21 a 00 hs.</p>
-                <img src="./assets/img/eventoUno.jpg" alt="">
-                <button >RESERVÁ AHORA</button>
+                <img src="./assets/img/eventoUno.jpg" alt="vasos de cerveza">
+                <button><a href="#reservas">RESERVÁ AHORA</a></button>
             </div>
-            <div class="evento">
+            <div class="evento" data-aos="fade-down">
                 <h3>Happy Hour</h3>
                 <p>hasta 50% off en tragos y picadas para grandes grupos</p>
                 <p>Sábado y domingo de 21 a 00 hs.</p>
-                <img src="./assets/img/eventoUno.jpg" alt="">
-                <button>RESERVÁ AHORA</button>
+                <img src="./assets/img/eventoUno.jpg" alt="vasos de cerveza">
+                <button><a href="#reservas">RESERVÁ AHORA</a></button>
             </div>
         </div>
-        <div class="nosotros">
-            <h3>Somos B<i class="bi bi-flower2"></i>RNEO</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis beatae accusantium fuga facere earum dolorem maxime amet repellendus sit quas dolorum tempore nesciunt, provident in, saepe accusamus expedita magnam obcaecati!
+        <div class="nosotros" id="nosotros">
+            <h3 data-aos="fade-left">Somos B<i class="bi bi-flower2"></i>RNEO</h3>
+            <p data-aos="fade-right">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis beatae accusantium fuga facere earum dolorem maxime amet repellendus sit quas dolorum tempore nesciunt, provident in, saepe accusamus expedita magnam obcaecati!
             Ullam minus quibusdam asperiores est molestias. Officiis amet dolore, accusantium incidunt ipsa sed necessitatibus voluptate explicabo quos, tenetur a autem est dolorum quam animi natus pariatur repellat iure similique eius!
             Consequatur earum laudantium, eligendi id exercitationem harum. Quae consequuntur saepe quas quos incidunt quis excepturi odio quod! Molestias beatae quae, debitis fugiat sunt deleniti nobis delectus? Architecto blanditiis repellat incidunt.
             Voluptatem error ipsum quia dicta. Minus iusto totam vel sit animi eum error nobis est unde nostrum dolore pariatur ab velit tempore hic magnam libero quod rem modi, beatae praesentium.</p>
         </div>
-        <div class="backgruondDos">
-            <img src="./assets/img/backgroundUno.jpg" alt="">
-        </div>
-        <div class="reservas">
+        <section id="image-carousel" class="splide carouselBorneo" aria-label="Imagenes del Bar">
+            <div class="splide__track">
+                  <ul class="splide__list">
+                      <li class="splide__slide">
+                          <img src="./assets/img/carouselUno.jpg" alt="personas tomando cerveza">
+                      </li>
+                      <li class="splide__slide">
+                          <img src="./assets/img/carouselDos.jpg" alt="persona almorzando">
+                      </li>
+                      <li class="splide__slide">
+                          <img src="./assets/img/carouselTres.jpg" alt="personas tomando cerveza">
+                      </li>
+                  </ul> 
+            </div>
+          </section>
+        <div class="reservas" id="reservas">
             <div class="selector">
                 <h3>Reserva ahora tu mesa</h3>
                 <form>
@@ -88,18 +103,18 @@
                         <label for="nombre">Nombre para la reserva</label>
                         <input name="nombreReserva" type="text" placeholder="Ingrese su nombre ">
                     </li>
-                    <div class="btnForm">
-                        <button type="submit">Reservar</button>
-                        <button type="reset">Cancelar</button>
-                    </div>
                 </form>
             </div>
-            <div class="pedidos">
+            <div class="btnForm">
+                <button type="submit">Reservar</button>
+                <button type="reset" id="cancelar">Cancelar</button>
+            </div>
+            <div class="pedidos" id="pedidos">
                 <h4>Tenes otro plan? Hacé tu pedido y disfrutalo donde estés</h4>
-                <button class="btn" id="pedido">Pedí ahora</button>
+                <button class="btn" id="irPedidos">Pedí ahora</button>
             </div>
         </div>
-        <div class="ubicacion">
+        <div class="ubicacion" id="ubicacion">
             <h4>Donde estamos?</h4>
             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13615.10952365232!2d-60.91785991473151!3d-31.44779511962032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1676640173329!5m2!1ses!2sar" width="900" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
@@ -107,16 +122,17 @@
     <footer>
         <div class="footerNav">
             <ul>
-                <li class="navbarOpcines"><a href="#">Nosotros</a></li>
-                <li class="navbarOpcines"><a href="#">Reservas</a></li>
+                <li class="navbarOpcines"><a href="#nosotros">Nosotros</a></li>
+                <li class="navbarOpcines"><a href="#reservas">Reservas</a></li>
                 <li class="navbarOpcines"><a href="./pages/pedidos.html">Pedidos</a></li>
-                <li class="navbarOpcines"><a href="#">Ubicación</a></li>
+                <li class="navbarOpcines"><a href="#ubicacion">Ubicación</a></li>
             </ul> 
         </div>
         <div class="footerNews">
             <h3>Suscríbete a nuestro newslwtter para ser el primero <br> en enterarte de las promociones</h3>
             <label for="mail">Ingrese su email</label>
             <input type="email">
+            <button type="submit">Suscribirse</button>
         </div>
         <div class="footerHorarios">
             <p>HORARIOS</p>
@@ -129,6 +145,11 @@
             <i class="bi bi-telegram"></i>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script>new Splide( '#image-carousel' ).mount();</script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init();</script>
     <script src="./assets/js/main.js"></script>
 </body>
-</html> 
+</html>

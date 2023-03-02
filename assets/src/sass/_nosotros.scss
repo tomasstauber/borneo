@@ -16,3 +16,21 @@
                 margin-bottom: 30px;
             }
 }
+
+.splide__slide img {
+    width: 80%;
+    height: 500px;
+}
+
+.splide__arrow--next{
+    right: 13em;
+    opacity: 0;
+}
+
+.splide__arrow--prev{
+    left: 13em;
+}
+
+.carouselBorneo{
+    text-align: center;
+}

@@ -49,6 +49,16 @@ const menuDinamico = () =>{
         const agregar = document.getElementById(`agregar${producto.id}`);
         agregar.addEventListener("click", ()=>{
             agregarProducto(producto.id);
+            Toastify({
+                text: "Producto agregado al carrito!",
+                duration: 2000,
+                gravity: "top",
+                position: "right",
+                stopOnFocus: true,
+                style: {
+                    background: "#65B262",
+                }
+            }).showToast();
         })
     })
 };
@@ -73,6 +83,16 @@ const wrapperCarrito = document.getElementById("wrapperCarrito");
 const verCarrito = document.getElementById("btnCarrito");
 
 verCarrito.addEventListener("click", () =>{
+    if(carrito.length === 0){
+        Swal.fire({
+            title: 'El carrito está vacio',
+            text: 'primero debes agregar productos al carrito',
+            icon: 'warning',
+            color: '#fafafa',
+            background: '#494443',
+            confirmButtonColor: '#000000'
+        })
+    }
     carritoDinamico();
 })
 
@@ -136,13 +156,24 @@ const sumaCarrito = () => {
 const finalizarCompra = document.getElementById("finalizarCompra");
 
 finalizarCompra.addEventListener("click", () =>{
-    vaciarCarrito();   
-    const cierre = document.createElement("div");
-    cierre.className = ("anuncio");
-    cierre.innerHTML =  `
-                         <h3>Su pedido se registró exitosamente!</h3>
-                         <p>El restaurante está preparando tu pedido</p>
-                         <p>En unos minutos podrás ver su estado en tiempo real.</p>   
-                        `
-    finalizarCompra.appendChild(cierre);
+    if(carrito.length >= 1){
+        Swal.fire({
+            title: 'Su pedido ha sido registrado con éxito!',
+            text: 'en unos minutos podrás ver su estado en tiempo real',
+            icon: 'success',
+            color: '#fafafa',
+            background: '#494443',
+            confirmButtonColor: '#000000'
+        }) 
+    } else {
+        Swal.fire({
+            title: 'El carrito está vacio',
+            text: 'primero debes agregar productos al carrito',
+            icon: 'warning',
+            color: '#fafafa',
+            background: '#494443',
+            confirmButtonColor: '#000000'
+        })
+    }
+    vaciarCarrito();
 })
