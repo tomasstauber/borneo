@@ -23,7 +23,7 @@
         </div>
         <div class="searchNav">
             <input type="search" class="buscarInput" placeholder="Buscar productos">
-            <button><i class="bi bi-cart"></i>  Ver Carrito</button>
+            <a class="abrirModal" id="btnCarrito"><i class="bi bi-cart"></i>  Ver Carrito</a>
         </div>
     </nav>
     <header>
@@ -36,15 +36,17 @@
         </div>
     </header>
     <main>
+        <section class="modalCarrito"> 
+            <div class="contenedorModal">
+                <h3 class="textoModal">Usted está llevando:</h3>
+                <div id="wrapperCarrito" class="texto"></div>
+                <h4 class="textoModalD">El total de la compra es de: $<span id="totalCompra"></span></h4>
+                <button class="btnModal cerrarModal">Cerrar</button>
+                <button class="btnModal" id="limpiarCarrito">Vaciar carrito</button>
+                <button class="btnModal" id="finalizarCompra">Finalizar pedido</button>
+            </div>
+        </section>
         <div id="wrapper"></div>
-        <div class="wrapperCarritoDefault">
-            <button><i class="bi bi-cart btnCarrito" id="btnCarrito"> Ver Carrito</i></button>
-            <h3 class="texto">Usted está llevando:</h3>
-            <div id="wrapperCarrito" class="texto"></div>
-            <h4>El total de la compra es de: $<span id="totalCompra"></span></h4>
-            <button id="limpiarCarrito">Vaciar carrito</button>
-            <button id="finalizarCompra">Finalizar pedido</button>
-        </div>  
     </main>
     <footer>
         <div class="footerNav">

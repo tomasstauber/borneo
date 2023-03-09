@@ -44,9 +44,14 @@ nav{
 
 .searchNav{
     margin-right: 25px;
-    margin-left: -750px;
+    margin-left: -730px;
         a{
+            cursor: pointer;
             text-decoration: none;
             color: white;
         }
+            input{
+                height: 25px;
+                margin-right: 10px;
+            }
 }

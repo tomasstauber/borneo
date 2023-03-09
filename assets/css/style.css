@@ -69,10 +69,14 @@ nav {
 
 .searchNav {
   margin-right: 25px;
-  margin-left: -750px; }
+  margin-left: -730px; }
   .searchNav a {
+    cursor: pointer;
     text-decoration: none;
     color: white; }
+  .searchNav input {
+    height: 25px;
+    margin-right: 10px; }
 
 .backgruondUno img {
   width: 100%;
@@ -321,6 +325,12 @@ footer {
   margin-top: 90px;
   gap: 20px; }
 
+#wrapperCarrito {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row; }
+
 .tarjeta {
   display: flex;
   flex-direction: column;
@@ -344,36 +354,17 @@ footer {
     color: black;
     cursor: pointer; }
 
-.wrapperCarritoDefault {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 2px solid white;
-  width: max-content;
-  height: max-content;
-  margin: 100px 0px 50px 50px;
-  font-family: quicksand, sans serif; }
-  .wrapperCarritoDefault h3 {
-    font-family: rowdies, sans serif;
-    font-size: 25px;
-    margin: 10px; }
-  .wrapperCarritoDefault button {
-    width: 350px;
-    height: 30px;
-    font-size: 15px;
-    margin: 10px;
-    cursor: pointer; }
-  .wrapperCarritoDefault h4 {
-    font-family: quicksand, sans serif;
-    margin: 10px 0px 0px 10px; }
-
 #limpiarCarrito {
+  border: none;
   background-color: #f70606;
   cursor: pointer; }
 
 .itemCarrito {
+  font-family: quicksand, sans serif;
+  text-align: center;
+  justify-content: center;
   display: flex;
-  padding: 20px;
+  padding: 15px;
   gap: 25px;
   color: white; }
 
@@ -411,3 +402,48 @@ footer {
     transform: rotate(0deg); }
   100% {
     transform: rotate(360deg); } }
+
+.modalCarrito {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #111111bd;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 100; }
+
+.mostrarModal {
+  opacity: 1;
+  pointer-events: unset; }
+
+.contenedorModal {
+  margin: auto;
+  width: 90%;
+  height: max-content;
+  max-width: 800px;
+  max-height: 1000%;
+  background-color: #333030;
+  border-radius: 3px;
+  padding: 3em 2.5em;
+  display: grid;
+  gap: 1em;
+  place-items: center;
+  grid-auto-columns: 100%; }
+
+.textoModal {
+  color: white;
+  font-family: rowdies, sans serif;
+  font-size: 30px; }
+
+.textoModalD {
+  color: white;
+  font-family: quicksand, sans serif;
+  font-size: 15px; }
+
+.btnModal {
+  cursor: pointer;
+  height: 30px;
+  width: 150px; }

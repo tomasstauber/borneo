@@ -1,0 +1,50 @@
+.modalCarrito{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111111bd;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.mostrarModal{
+    opacity: 1;
+    pointer-events: unset;
+}
+
+.contenedorModal{
+    margin: auto;
+    width: 90%;
+    height: max-content;
+    max-width: 800px;
+    max-height: 1000%;
+    background-color: rgb(51, 48, 48);
+    border-radius: 3px;
+    padding: 3em 2.5em;
+    display: grid;
+    gap: 1em;
+    place-items: center;
+    grid-auto-columns: 100%;
+}
+
+.textoModal{
+    color: white;
+    font-family: $letraMain;
+    font-size: 30px;
+}
+
+.textoModalD{
+    color: white;
+    font-family: $letraBody;
+    font-size: 15px;
+}
+
+.btnModal{
+    cursor: pointer;
+    height: 30px;
+    width: 150px;
+}

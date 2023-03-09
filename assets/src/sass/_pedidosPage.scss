@@ -14,6 +14,13 @@
     gap: 20px;
 }
 
+#wrapperCarrito{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
 .tarjeta{
     display: flex;
     flex-direction: column;
@@ -42,41 +49,18 @@
                     }
 }
 
-.wrapperCarritoDefault{
-    display: flex;
-    flex-direction: column;
-    align-items: center;    
-    border: 2px solid white;
-    width: max-content;
-    height: max-content;
-    margin: 100px 0px 50px 50px;
-    font-family: $letraBody;
-        h3{
-            font-family: $letraMain;
-            font-size: 25px;
-            margin: 10px;
-        }
-            button{
-                width: 350px;
-                height: 30px;
-                font-size: 15px;
-                margin: 10px;
-                cursor: pointer;
-            }
-                h4{
-                    font-family: $letraBody;
-                    margin: 10px 0px 0px 10px;
-                }
-}
-
 #limpiarCarrito{
+    border: none;
     background-color: rgb(247, 6, 6);
     cursor: pointer;
 }
 
 .itemCarrito{
+    font-family: $letraBody;
+    text-align: center;
+    justify-content: center;
     display: flex;
-    padding: 20px;
+    padding: 15px;
     gap: 25px;
     color: white;
 }

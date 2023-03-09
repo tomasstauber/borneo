@@ -50,7 +50,7 @@ const menuDinamico = () => {
             agregarProducto(producto.id);
             Toastify({
                 text: "Producto agregado al carrito!",
-                duration: 2000,
+                duration: 1000,
                 gravity: "top",
                 position: "right",
                 stopOnFocus: true,
@@ -156,8 +156,8 @@ const finalizarCompra = document.getElementById("finalizarCompra");
 finalizarCompra.addEventListener("click", () => {
     if (carrito.length >= 1) {
         Swal.fire({
-            title: 'Su pedido ha sido registrado con éxito!',
-            text: 'en unos minutos podrás ver su estado en tiempo real',
+            title: 'Su orden ha sido registrada con éxito!',
+            text: 'el restaurante ya esta preparando tu pedido, te enviaremos los detalles por mail',
             icon: 'success',
             color: '#fafafa',
             background: '#494443',
@@ -174,4 +174,20 @@ finalizarCompra.addEventListener("click", () => {
         })
     }
     vaciarCarrito();
-})  
+    modal.classList.remove("mostrarModal");
+})
+
+
+const abrirModal = document.querySelector(".abrirModal");
+const cerrarModal = document.querySelector(".cerrarModal");
+const modal = document.querySelector(".modalCarrito");
+
+abrirModal.addEventListener("click", (e) => {
+    e.preventDefault();
+    modal.classList.add("mostrarModal")
+})
+
+cerrarModal.addEventListener("click", (e) => {
+    e.preventDefault();
+    modal.classList.remove("mostrarModal")
+})
