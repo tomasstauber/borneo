@@ -36,3 +36,17 @@ nav{
                 font-size: 35px;
             }
 }
+
+.navBarPedidos{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.searchNav{
+    margin-right: 25px;
+    margin-left: -750px;
+        a{
+            text-decoration: none;
+            color: white;
+        }
+}

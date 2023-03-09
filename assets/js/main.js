@@ -29,23 +29,60 @@ window.addEventListener('load', () => {
 
 const formulario =document.getElementById("formulario");
 
-const reservar = (event) => {
-    event.preventDefault();
-    const datos = new FormData(event.target);
-    const datosCompletos = Object.fromEntries(datos.entries());
-    console.log(JSON.stringify(datosCompletos));
+const reservar = () => {
+    const nombre = document.getElementById("nombre").value
+    const email = document.getElementById("email").value
+    const dni = document.getElementById("dni").value
+    const fecha = document.getElementById("fecha").value
+    const hora = document.getElementById("hora").value
+    const cantidad = document.getElementById("cantidad").value
+
+    const reserva = {
+        nombre: nombre,
+        email: email,
+        dni: dni,
+        fecha: fecha,
+        hora: hora,
+        cantidad: cantidad
+    }
+    console.log(reserva);
+    localStorage.setItem("reserva", JSON.stringify(reserva));
 }
 
-const procesaDatos = (event) => {
-    event.preventDefault();
-    const datos = new FormData(event.target);
-    const nombre = datos.get("nombre");
-    const email = datos.get("email");
-    const dni = datos.get("dni");
-    const fecha = datos.get("fecha");
-    const hora = datos.get("hora");
-    const cantidad = datos.get("cantidad");
-    console.log({nombre}, {email}, {dni}, {fecha}, {hora}, {cantidad})
+const reservaOk = () => {
+    Swal.fire({
+        title: 'Su reserva ha sido registrada con éxito!',
+        text: 'te enviaremos los detalles y métodos de pago al mail que nos indicaste',
+        icon: 'success',
+        color: '#fafafa',
+        background: '#494443',
+        confirmButtonColor: '#000000'
+    }) 
 }
 
-formulario.addEventListener("submit", reservar);
+formulario.addEventListener("submit", (e) => {
+    e.preventDefault();
+    reservar();
+    reservaOk();
+});
+
+formulario.addEventListener("reset", () =>{
+    Swal.fire({
+        title: 'Estás seguro de cancelar tu reserva?',
+        text: "",
+        icon: 'question',
+        showCancelButton: true,
+        cancelButtonText: 'Continuar con la reserva',
+        confirmButtonColor: '#d33' ,
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Si, deseo cancelarla'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            '',
+            'Su reserva ha sido cancelada',
+            'success'
+          )
+        }
+      })
+})

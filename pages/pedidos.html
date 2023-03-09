@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
-    <nav>
+    <nav class="navBarPedidos">
         <div class="tituloIndex">
             <h1>B<i class="bi bi-flower2"></i>RNEO</h1>
             <small>Night Club</small>
@@ -21,15 +21,19 @@
                 <li><a href="../index.html">Inicio</a></li>
             </ul>
         </div>
+        <div class="searchNav">
+            <input type="search" class="buscarInput" placeholder="Buscar productos">
+            <button><i class="bi bi-cart"></i>  Ver Carrito</button>
+        </div>
     </nav>
     <header>
         <div class="backgroundPedidos">
             <img src="../assets/img/backgroundPedidos.jpg" alt="">
         </div>
         <div class="tituloPedidos">
-           <h1>Desde nuestra cocina, la puerta de tu casa</h1>
-           <h2>B<i class="bi bi-flower2"></i>RNEO</h2>
-       </div>
+            <h1>Desde nuestra cocina, la puerta de tu casa</h1>
+            <h2>B<i class="bi bi-flower2"></i>RNEO</h2>
+        </div>
     </header>
     <main>
         <div id="wrapper"></div>
@@ -40,7 +44,7 @@
             <h4>El total de la compra es de: $<span id="totalCompra"></span></h4>
             <button id="limpiarCarrito">Vaciar carrito</button>
             <button id="finalizarCompra">Finalizar pedido</button>
-        </div>
+        </div>  
     </main>
     <footer>
         <div class="footerNav">

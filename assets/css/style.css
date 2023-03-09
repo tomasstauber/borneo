@@ -63,6 +63,17 @@ nav {
   .tituloIndex i {
     font-size: 35px; }
 
+.navBarPedidos {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.6); }
+
+.searchNav {
+  margin-right: 25px;
+  margin-left: -750px; }
+  .searchNav a {
+    text-decoration: none;
+    color: white; }
+
 .backgruondUno img {
   width: 100%;
   height: 800px;
