@@ -1,12 +1,12 @@
 [
-    {"id": 1, "nombre": "Papas Fritas", "descripcion": "Papas rústicas, fritas y condimentadas", "precio": 600, "img": "../assets/img/papasFR.jpg"},
-    {"id": 2, "nombre": "Papas con cheddar", "descripcion": "Papas rústicas fritas con cheddar y verdeo", "precio": 800, "img": "../assets/img/papasFR.jpg"},
-    {"id": 3, "nombre": "Hamburguesa BC", "descripcion": "Hamburguesa doble carne, con cheddar y bacon", "precio": 900, "img": "../assets/img/papasFR.jpg"},
-    {"id": 4, "nombre": "Hamburguesa Pampeana", "descripcion": "Hamburguesa doble carne, con queso tybo y salsa criolla", "precio": 1200, "img": "../assets/img/papasFR.jpg"},
-    {"id": 5, "nombre": "Tabla Chica", "descripcion": "Tabla con variedad de quesos, fiambres y aceitunas", "precio": 1200, "img": "../assets/img/papasFR.jpg"},
-    {"id": 6, "nombre": "Tabla Grande", "descripcion": "Tabla con variedad de quesos, fiambres. Incluye fondeu", "precio": 2500, "img": "../assets/img/papasFR.jpg"},
-    {"id": 7, "nombre": "Cerveza Rubia", "descripcion": "Tirada Artesanal", "precio": 600, "img": "../assets/img/papasFR.jpg"},
-    {"id": 8, "nombre": "Cerveza IPA", "descripcion": "Tirada Artesanal", "precio": 600, "img": "../assets/img/papasFR.jpg"},
-    {"id": 9, "nombre": "Fernet Branca", "descripcion": "Vaso de Fernet Branca 900cc.", "precio": 900, "img": "../assets/img/papasFR.jpg"},
-    {"id": 10, "nombre": "Agua Mineral", "descripcion": "Agua mineral 500ml", "precio": 300, "img": "../assets/img/papasFR.jpg"}
+    {"id": 1, "nombre": "Papas Fritas", "descripcion": "Papas rústicas, fritas y condimentadas", "precio": 600, "img": "../assets/img/papasFR.jpg", "cantidad": 1},
+    {"id": 2, "nombre": "Papas con cheddar", "descripcion": "Papas rústicas fritas con cheddar y verdeo", "precio": 800, "img": "../assets/img/papasFR.jpg", "cantidad": 1},
+    {"id": 3, "nombre": "Hamburguesa BC", "descripcion": "Hamburguesa doble carne, con cheddar y bacon", "precio": 900, "img": "../assets/img/papasFR.jpg", "cantidad": 1},
+    {"id": 4, "nombre": "Hamburguesa Pampeana", "descripcion": "Hamburguesa doble carne, con queso tybo y salsa criolla", "precio": 1200, "img": "../assets/img/papasFR.jpg", "cantidad": 1},
+    {"id": 5, "nombre": "Tabla Chica", "descripcion": "Tabla con variedad de quesos, fiambres y aceitunas", "precio": 1200, "img": "../assets/img/papasFR.jpg", "cantidad": 1},
+    {"id": 6, "nombre": "Tabla Grande", "descripcion": "Tabla con variedad de quesos, fiambres. Incluye fondeu", "precio": 2500, "img": "../assets/img/papasFR.jpg", "cantidad": 1},
+    {"id": 7, "nombre": "Cerveza Rubia", "descripcion": "Tirada Artesanal", "precio": 600, "img": "../assets/img/papasFR.jpg", "cantidad": 1},
+    {"id": 8, "nombre": "Cerveza IPA", "descripcion": "Tirada Artesanal", "precio": 600, "img": "../assets/img/papasFR.jpg", "cantidad": 1},
+    {"id": 9, "nombre": "Fernet Branca", "descripcion": "Vaso de Fernet Branca 900cc.", "precio": 900, "img": "../assets/img/papasFR.jpg", "cantidad": 1},
+    {"id": 10, "nombre": "Agua Mineral", "descripcion": "Agua mineral 500ml", "precio": 300, "img": "../assets/img/papasFR.jpg", "cantidad": 1}
 ]

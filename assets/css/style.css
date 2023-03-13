@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
@@ -10,26 +11,6 @@ body {
   background-color: black;
   color: white; }
 
-/* h3{
-    font-size: 35px;
-    padding: 30px;
-}
-    form{
-        border: none;
-        list-style: none;
-    }
-        label{
-            margin-bottom: 15px;
-        }
-        input{
-            background-color: rgba(97, 94, 94, 0.726);
-            color: white;
-            border: 2px solid white;
-            text-align: center;
-            width: 200px;
-            height: 50px;
-        }
-} */
 nav {
   display: flex;
   justify-content: space-between;
@@ -64,6 +45,7 @@ nav {
     font-size: 35px; }
 
 .navBarPedidos {
+  top: 0;
   position: fixed;
   background-color: rgba(0, 0, 0, 0.6); }
 
@@ -312,17 +294,11 @@ footer {
   font-size: 20px;
   padding: 10px; }
 
-.tituloPedidos {
-  display: flex;
-  justify-content: center; }
-  .tituloPedidos h1, .tituloPedidos h2 {
-    display: none; }
-
 #wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin-top: 90px;
+  margin-top: 120px;
   gap: 20px; }
 
 #wrapperCarrito {
@@ -335,7 +311,6 @@ footer {
   display: flex;
   flex-direction: column;
   text-align: center;
-  align-items: center;
   justify-content: space-evenly;
   width: 300px;
   height: 400px;
@@ -365,20 +340,19 @@ footer {
   justify-content: center;
   display: flex;
   padding: 15px;
-  gap: 25px;
   color: white; }
+  .itemCarrito button:nth-child(4) {
+    width: 20px; }
+  .itemCarrito button:nth-child(5) {
+    width: 20px; }
+  .itemCarrito button:nth-child(6) {
+    display: flex;
+    width: 55px;
+    margin: auto;
+    margin-top: 5px; }
 
-.btnCarrito {
-  font-size: 25px;
-  margin: 10px;
-  cursor: pointer; }
-
-.anuncio {
-  width: 500px;
-  margin-top: 30px;
-  margin-bottom: 50px;
-  border: 2px solid white;
-  color: white; }
+.filtro {
+  display: none; }
 
 .loading {
   width: 100vw;
@@ -446,4 +420,23 @@ footer {
 .btnModal {
   cursor: pointer;
   height: 30px;
-  width: 150px; }
+  width: 150px;
+  margin: 10px;
+  border-radius: 2px;
+  border: none; }
+
+.cerrarModal {
+  background-color: transparent;
+  border: none;
+  justify-self: end;
+  cursor: pointer;
+  color: #686767;
+  font-size: 28px; }
+
+.cerrarModal:hover {
+  transition: 0.5s;
+  color: white;
+  font-size: 30px; }
+
+#añade {
+  background-color: aqua; }

@@ -15,8 +15,6 @@
     <div class="loading">
         <i class="fa-solid fa-spinner"></i>
     </div>
-    <!-- IMPORTANTE  -->
-    <!-- La consigna solicitada para la tercer PreEntega esta realizada en el archivo: productos.js, el sistema de reservas del index aun no está terminado -->
     <nav>
         <div class="tituloIndex">
                 <h1>B<i class="bi bi-flower2"></i>RNEO</h1>
@@ -34,7 +32,7 @@
     <header>
         <div class="flotante">
             <i class="bi bi-flower2"></i>
-            <p class="flotanteInfo">Rompiendo esquemas, <br> siempre resaltando la esencia <br> de nuestros invitados, <br> brindándoles el mejor servicio.</p>
+            <p class="flotanteInfo">Rompiendo esquemas, <br> siempre resaltando la esencia <br> de nuestros clientes, <br> brindándoles el mejor servicio.</p>
             <button class="flotanteBtn"><a href="#propuestas">CONOCE NUESTRAS PROPUESTAS</a></button>
         </div>
     </header>
@@ -139,9 +137,11 @@
         </div>
         <div class="footerNews">
             <h3>Suscríbete a nuestro newslwtter para ser el primero <br> en enterarte de las promociones</h3>
-            <label for="mail">Ingrese su email</label>
-            <input type="email">
-            <button type="submit">Suscribirse</button>
+            <form>
+                <label for="mail">Ingrese su email</label>
+                <input type="email" id="mail" required>
+                <button id="suscribirse">Suscribirse</button>
+            </form>
         </div>
         <div class="footerHorarios">
             <p>HORARIOS</p>

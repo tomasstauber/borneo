@@ -22,33 +22,26 @@
             </ul>
         </div>
         <div class="searchNav">
-            <input type="search" class="buscarInput" placeholder="Buscar productos">
+            <input type="search" id="buscador" placeholder="Buscar productos">
             <a class="abrirModal" id="btnCarrito"><i class="bi bi-cart"></i>  Ver Carrito</a>
         </div>
     </nav>
-    <header>
-        <p></p>
-        <div class="backgroundPedidos">
-            <img src="../assets/img/backgroundPedidos.jpg" alt="">
-        </div>
-        <div class="tituloPedidos">
-            <h1>Desde nuestra cocina, la puerta de tu casa</h1>
-            <h2>B<i class="bi bi-flower2"></i>RNEO</h2>
-        </div>
-    </header>
     <main>
         <section class="modalCarrito"> 
             <div class="contenedorModal">
+                <div>
+                    <button class="cerrarModal"> <i class="bi bi-x-circle"></i> </button>
+                </div>
                 <h3 class="textoModal">Usted está llevando:</h3>
                 <div id="wrapperCarrito" class="texto"></div>
                 <h4 class="textoModalD">El total de la compra es de: $<span id="totalCompra"></span></h4>
-                <button class="btnModal cerrarModal">Cerrar</button>
-                <button class="btnModal" id="limpiarCarrito">Vaciar carrito</button>
-                <button class="btnModal" id="finalizarCompra">Finalizar pedido</button>
+                <div>
+                    <button class="btnModal" id="limpiarCarrito">Vaciar carrito</button>
+                    <button class="btnModal" id="finalizarCompra">Finalizar pedido</button>
+                </div>
             </div>
         </section>
         <div id="wrapper"></div>
-        <div id="listado"></div>
     </main>
     <footer>
         <div class="footerNav">

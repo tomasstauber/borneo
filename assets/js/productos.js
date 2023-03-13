@@ -1,22 +1,24 @@
 let carrito = [];
 
+let productos = [];
+
 if (localStorage.getItem("carrito")) {
     carrito = JSON.parse(localStorage.getItem("carrito"));
 }
 
-const listado = document.getElementById("listado");
-
 const listadoProductos = "../assets/json/productos.json";
 
 fetch(listadoProductos)
-.then(respuesta => respuesta.json())
-.then(datos =>  {
-    console.log(datos)
-    datos.forEach(producto => {
-        const tarjeta = document.createElement("div");
-        tarjeta.classList.add("tarjeta");
-        tarjeta.innerHTML = `
-                                <div class="tarjeta">
+    .then(respuesta => respuesta.json())
+    .then(datos => {
+        console.log(datos);
+        productos = datos;
+        datos.forEach(producto => {
+            const tarjeta = document.createElement("div");
+            tarjeta.classList.add("tarjeta");
+            tarjeta.classList.add("articulo")
+            tarjeta.innerHTML = `
+                                <div>
                                     <h3> ${producto.nombre} </h3>
                                     <img src="${producto.img}" alt="${producto.nombre}">
                                     <p> ${producto.descripcion} </p>
@@ -24,10 +26,10 @@ fetch(listadoProductos)
                                     <button id="agregar${producto.id}">Agregar al carrito</button>
                                 </div>
                             `
-        wrapper.appendChild(tarjeta);
+            wrapper.appendChild(tarjeta);
 
-        const agregar = document.getElementById(`agregar${producto.id}`);
-            agregar.addEventListener("click", ()=> {
+            const agregar = document.getElementById(`agregar${producto.id}`);
+            agregar.addEventListener("click", () => {
                 agregarProducto(producto.id);
                 Toastify({
                     text: "Producto agregado al carrito!",
@@ -40,24 +42,26 @@ fetch(listadoProductos)
                     }
                 }).showToast();
             })
+        })
     })
-})
+    .catch(error => console.error(error));
+
 
 const agregarProducto = (id) => {
     const productoAgregado = carrito.find(producto => producto.id === id);
     if (productoAgregado) {
         productoAgregado.cantidad++;
     } else {
-        const producto = listadoProductos.search(producto => producto.id === id);
+        const producto = productos.find(producto => producto.id === id);
         carrito.push(producto)
     }
     console.log(carrito);
     localStorage.setItem("carrito", JSON.stringify(carrito));
 };
 
+
 const wrapperCarrito = document.getElementById("wrapperCarrito");
 const verCarrito = document.getElementById("btnCarrito");
-
 verCarrito.addEventListener("click", () => {
     if (carrito.length === 0) {
         Swal.fire({
@@ -82,10 +86,22 @@ const carritoDinamico = () => {
                                     <h3>${producto.nombre}</h3>
                                     <p>Precio: $${producto.precio}</p>
                                     <p>Cantidad: ${producto.cantidad}</p>
-                                    <button class = "" id="eliminar${producto.id}" > Eliminar </button>
+                                    <button id="añade${producto.id}"> + </button>
+                                    <button id="quita${producto.id}"> - </button>
+                                    <button id="eliminar${producto.id}"> Eliminar </button>
                                 </div>
         `
         wrapperCarrito.appendChild(itemCarrito);
+
+        const botonMas = document.getElementById(`añade${producto.id}`);
+        botonMas.addEventListener("click", () => {
+            añade(producto.id)
+        })
+
+        const botonMenos = document.getElementById(`quita${producto.id}`);
+        botonMenos.addEventListener("click", () => {
+            quita(producto.id)
+        })
 
         const boton = document.getElementById(`eliminar${producto.id}`);
         boton.addEventListener("click", () => {
@@ -95,24 +111,36 @@ const carritoDinamico = () => {
     sumaCarrito();
 };
 
+const añade = (id) => {
+    const producto = carrito.find((producto) => producto.id === id);
+    producto.cantidad++;
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    carritoDinamico();
+}
+
+const quita = (id) => {
+    const producto = carrito.find((producto) => producto.id === id);
+    producto.cantidad--;
+    if (producto.cantidad === 0) {
+        eliminarItem(id);
+    } else {
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+    }
+    carritoDinamico();
+}
+
 const eliminarItem = (id) => {
     const producto = carrito.find(producto => producto.id === id);
     const indice = carrito.indexOf(producto);
-    if (producto.cantidad === 1) {
-        carrito.splice(indice, 1);
-    } else {
-        producto.cantidad--
-    }
+    carrito.splice(indice, 1);
     carritoDinamico();
     localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
 const limpiarCarrito = document.getElementById("limpiarCarrito");
-
 limpiarCarrito.addEventListener("click", () => {
     vaciarCarrito();
 })
-
 const vaciarCarrito = () => {
     carrito = [];
     carritoDinamico();
@@ -120,7 +148,6 @@ const vaciarCarrito = () => {
 }
 
 const totalCompra = document.getElementById("totalCompra");
-
 const sumaCarrito = () => {
     let precioFinal = 0;
     carrito.forEach(producto => {
@@ -129,8 +156,24 @@ const sumaCarrito = () => {
     totalCompra.innerHTML = `${precioFinal}`;
 }
 
-const finalizarCompra = document.getElementById("finalizarCompra");
+const buscador = document.getElementById("buscador");
 
+buscador.addEventListener("keyup", e => {
+    console.log(e.target.value)
+    if (e.target.matches("#buscador")) {
+
+        if (e.key === "Escape") e.target.value = "";
+
+        document.querySelectorAll(".articulo").forEach(tarjeta => {
+
+            tarjeta.textContent.toLowerCase().includes(e.target.value.toLowerCase())
+                ? tarjeta.classList.remove("filtro")
+                : tarjeta.classList.add("filtro");
+        })
+    }
+})
+
+const finalizarCompra = document.getElementById("finalizarCompra");
 finalizarCompra.addEventListener("click", () => {
     if (carrito.length >= 1) {
         Swal.fire({
@@ -154,7 +197,6 @@ finalizarCompra.addEventListener("click", () => {
     vaciarCarrito();
     modal.classList.remove("mostrarModal");
 })
-
 
 const abrirModal = document.querySelector(".abrirModal");
 const cerrarModal = document.querySelector(".cerrarModal");

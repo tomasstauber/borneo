@@ -47,4 +47,26 @@
     cursor: pointer;
     height: 30px;
     width: 150px;
+    margin: 10px;
+    border-radius: 2px;
+    border: none;
+}
+
+.cerrarModal{
+    background-color: transparent;
+    border: none;
+    justify-self: end;
+    cursor: pointer;
+    color: #686767;
+    font-size: 28px;
+}
+
+.cerrarModal:hover{
+    transition: 0.5s;
+    color: white;
+    font-size: 30px;
+}
+
+#añade{
+    background-color: aqua;
 }
