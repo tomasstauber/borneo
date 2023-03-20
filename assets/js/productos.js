@@ -211,3 +211,33 @@ cerrarModal.addEventListener("click", (e) => {
     e.preventDefault();
     modal.classList.remove("mostrarModal")
 })
+
+const suscribirse = document.getElementById("suscribirse");
+
+const suscribir = () => {
+    const email = document.getElementById("mail").value;
+    
+    const suscriptos = {
+         email: email
+    }
+    
+    console.log(suscriptos);
+    localStorage.setItem("suscriptos", JSON.stringify(suscriptos));
+}
+
+const suscribirseOk = () => {
+    Swal.fire({
+        title: 'Te has suscripto correctamente!',
+        text: 'te mantendremos al tanto de los eventos, promociones y descuentos',
+        icon: 'success',
+        color: '#fafafa',
+        background: '#494443',
+        confirmButtonColor: '#000000'
+    }) 
+}
+
+suscribirse.addEventListener("click", (e) => {
+    e.preventDefault();
+    suscribir();
+    suscribirseOk();
+})
